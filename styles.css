@@ -1,0 +1,324 @@
+/* Estilo base inspirado en el formulario futurista (login-box) */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrapper general */
+.presentation-wrapper {
+    max-width: 1100px;
+    margin: 40px auto 100px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Header superior */
+.top-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #e0f7ff;
+}
+
+.top-header .header-title h1 {
+    margin: 0;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(3, 233, 244, 0.6);
+}
+
+.top-header .header-subtitle p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #b0c4ff;
+}
+
+.chip {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(3, 233, 244, 0.7);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 6px rgba(3, 233, 244, 0.7);
+}
+
+/* Contenedor principal tipo "login-box" gigante */
+.presentation-container {
+    position: relative;
+    width: 100%;
+    min-height: 65vh;
+    padding: 30px 32px 26px 32px;
+    background: rgba(0, 0, 0, 0.55);
+    box-sizing: border-box;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(3, 233, 244, 0.25);
+}
+
+/* Marco interno de luz (borde futurista suave) */
+.neon-card {
+    position: relative;
+}
+
+.neon-frame {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow:
+        0 0 10px rgba(3, 233, 244, 0.4),
+        0 0 25px rgba(3, 233, 244, 0.25),
+        0 0 50px rgba(3, 233, 244, 0.18);
+    opacity: 0.7;
+}
+
+/* Páginas */
+.page-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.page-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tipografía y estructura interna */
+.page-number {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #8aa4c2;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.chapter {
+    font-size: 1.9rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #03e9f4;
+    text-shadow: 0 0 10px rgba(3, 233, 244, 0.9);
+}
+
+h2, h3, h4 {
+    font-weight: 600;
+    color: #9befff;
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(3, 233, 244, 0.2);
+    padding-bottom: 0.4rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #64d2ff;
+}
+
+h4 {
+    font-size: 1.05rem;
+    color: #b0e7ff;
+}
+
+p, li {
+    font-size: 0.97rem;
+    line-height: 1.6;
+    color: #e1ebff;
+}
+
+strong {
+    color: #ffffff;
+}
+
+/* Listas */
+ul, ol {
+    padding-left: 1.4rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Citas y notas */
+.author-quote {
+    font-style: italic;
+    font-size: 1.02rem;
+    border-left: 4px solid #03e9f4;
+    padding-left: 16px;
+    margin: 16px 0;
+    color: #cdefff;
+    background: radial-gradient(circle at left, rgba(3, 233, 244, 0.18), transparent 60%);
+}
+
+.note {
+    background: rgba(255, 248, 225, 0.03);
+    border-left: 4px solid #ffc107;
+    padding: 12px 14px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-size: 0.92rem;
+    color: #ffe9a8;
+}
+
+.image-placeholder {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(3, 233, 244, 0.5);
+    text-align: center;
+    padding: 24px;
+    color: #8fb9ff;
+    border-radius: 6px;
+    margin: 18px 0;
+    font-style: italic;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 0.9rem;
+    background: rgba(7, 18, 40, 0.8);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+table th, table td {
+    border: 1px solid rgba(3, 233, 244, 0.16);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table th {
+    background: linear-gradient(90deg, rgba(3, 233, 244, 0.15), rgba(3, 233, 244, 0.05));
+    color: #e7fbff;
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background: rgba(6, 14, 35, 0.8);
+}
+
+/* Navegación inferior tipo barra futurista */
+.navigation-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.82);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9);
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 100;
+    border-top: 1px solid rgba(3, 233, 244, 0.3);
+    backdrop-filter: blur(6px);
+}
+
+#pageIndicator {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #b4d9ff;
+    letter-spacing: 1px;
+}
+
+/* Botones neon (basados en el <a> del login-box) */
+.neon-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 22px;
+    color: #03e9f4;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.neon-btn:disabled {
+    color: #7f8c8d;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+.neon-btn:not(:disabled):hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow:
+        0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .presentation-wrapper {
+        margin-top: 20px;
+        margin-bottom: 90px;
+        padding: 0 10px;
+    }
+
+    .presentation-container {
+        padding: 18px 16px 18px 16px;
+    }
+
+    .top-header .header-title h1 {
+        font-size: 1.6rem;
+    }
+
+    .chapter {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p, li {
+        font-size: 0.9rem;
+    }
+
+    #pageIndicator {
+        font-size: 0.8rem;
+    }
+
+    .neon-btn {
+        letter-spacing: 1px;
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+}
